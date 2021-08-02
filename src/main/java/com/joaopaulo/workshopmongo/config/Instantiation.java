@@ -13,18 +13,18 @@ import com.joaopaulo.workshopmongo.repository.UserRepository;
 public class Instantiation implements CommandLineRunner{
 
 	@Autowired
-	private UserRepository userRepository;
+	private UserRepository userReposiroty;
 	
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... arg0) throws Exception {
 		
-			userRepository.deleteAll();
+			userReposiroty.deleteAll();
 		
 		User maria = new User(null, "Maria Brown", "maria@gmail.com");
 		User alex = new User(null, "Alex Green", "alex@gmail.com");
 		User bob = new User(null, "Bob Grey", "bob@gmail.com");
 		
-		userRepository.save(Arrays.asList(maria, alex, bob));
+		userReposiroty.save(Arrays.asList(maria, alex, bob));
 	}
 
 }
